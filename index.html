@@ -5,20 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ahmad Mulia Aliasnyah — Portfolio & Dashboard</title>
   <style>
-    /* --- Variabel Warna & Tema Premium Modern (Nuansa Biru Muda) --- */
+    /* --- Variabel Warna & Tema Premium Modern (Aesthetic Muted Dark Yellow) --- */
     :root {
-      --bg-sidebar-gradient: linear-gradient(135deg, #09111e 0%, #03070d 100%);
-      --bg-main: #eef5f9; /* Mengubah background utama menjadi biru muda lembut */
+      /* Gradasi sidebar diubah jadi hitam kecokelatan/emas gelap ultra premium */
+      --bg-sidebar-gradient: linear-gradient(135deg, #181510 0%, #0c0a07 100%);
+      /* Background utama menjadi kuning gelap pudar/warm sand aesthetic */
+      --bg-main: #e8e2d5; 
       --bg-card: #ffffff;
-      --text-sidebar: #8e9aa8;
-      --text-sidebar-light: #ffffff;
-      --text-main: #2d3748;
-      --text-muted: #5a6a85;
-      --accent-gradient: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
-      --accent-color: #00b4db;
-      --border-color: #d2e1ed; /* Border soft menyesuaikan tema biru muda */
-      --glass-bg: rgba(255, 255, 255, 0.03);
-      --glass-border: rgba(255, 255, 255, 0.07);
+      --text-sidebar: #a39989;
+      --text-sidebar-light: #f4f0e6;
+      --text-main: #332f27;
+      --text-muted: #6e6554;
+      /* Gradasi aksen menggunakan warna emas/amber aesthetic yang pudar tapi tegas */
+      --accent-gradient: linear-gradient(135deg, #cca43b 0%, #b58926 100%);
+      --accent-color: #cca43b;
+      /* Border soft menyesuaikan tema warm tone */
+      --border-color: #d8ceb9; 
+      --glass-bg: rgba(255, 255, 255, 0.02);
+      --glass-border: rgba(255, 255, 255, 0.05);
     }
 
     * {
@@ -55,10 +59,10 @@
       z-index: 100;
       overflow-y: auto;
       border-right: 1px solid var(--glass-border);
-      box-shadow: 4px 0 25px rgba(0, 0, 0, 0.3);
+      box-shadow: 4px 0 25px rgba(0, 0, 0, 0.4);
     }
 
-    /* --- FIX TOTAL ANTI KARAKTER RUSAK: BULAT SEMPURNA NEON --- */
+    /* --- BULAT SEMPURNA NEON EMAS --- */
     aside .profile-img-container {
       display: block !important;
       width: 140px !important;
@@ -70,8 +74,8 @@
       margin: 0 auto 20px auto !important;
       padding: 0 !important;
       border-radius: 50% !important;
-      border: 3px solid #00b4db !important;
-      box-shadow: 0 0 20px rgba(0, 180, 219, 0.7) !important;
+      border: 3px solid var(--accent-color) !important;
+      box-shadow: 0 0 20px rgba(204, 164, 59, 0.5) !important;
       overflow: hidden !important;
     }
 
@@ -106,7 +110,7 @@
       letter-spacing: 2px;
       font-weight: 600;
       margin-bottom: 35px;
-      background: rgba(0, 180, 219, 0.1);
+      background: rgba(204, 164, 59, 0.1);
       padding: 4px 10px;
       border-radius: 20px;
     }
@@ -138,17 +142,17 @@
     /* Hover Menu */
     .nav-menu a:hover {
       color: var(--text-sidebar-light);
-      background-color: rgba(255, 255, 255, 0.03);
-      border-color: rgba(255, 255, 255, 0.05);
+      background-color: rgba(255, 255, 255, 0.02);
+      border-color: rgba(255, 255, 255, 0.04);
       padding-left: 25px;
     }
 
-    /* Tombol Aktif Gradasi Menyala */
+    /* Tombol Aktif Gradasi Menyala Emas */
     .nav-menu a.active {
       color: #fff !important;
       background: var(--accent-gradient) !important;
       font-weight: 600;
-      box-shadow: 0 8px 20px rgba(0, 131, 176, 0.4);
+      box-shadow: 0 8px 20px rgba(181, 137, 38, 0.35);
       border-color: transparent;
     }
 
@@ -190,7 +194,7 @@
     .text-social-links a:hover {
       color: var(--text-sidebar-light);
       border-color: var(--accent-color);
-      background: rgba(0, 180, 219, 0.05);
+      background: rgba(204, 164, 59, 0.05);
       transform: translateY(-2px);
     }
 
@@ -200,7 +204,7 @@
 
     /* Hak Cipta */
     .sidebar-footer {
-      color: #4a5464;
+      color: #595042;
       font-size: 0.7rem;
       text-align: center;
       line-height: 1.6;
@@ -209,7 +213,7 @@
     }
 
     .sidebar-footer strong {
-      color: #718296;
+      color: #8c7f6b;
     }
 
     /* ==========================================================================
@@ -233,7 +237,7 @@
       height: 480px;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(160, 185, 210, 0.3);
+      box-shadow: 0 10px 30px rgba(94, 86, 70, 0.15);
       position: relative;
     }
 
@@ -251,7 +255,7 @@
     .section-title {
       font-size: 1.6rem;
       font-weight: 700;
-      color: #1a2c40;
+      color: #2b271f;
       margin-bottom: 24px;
       position: relative;
       padding-bottom: 10px;
@@ -282,19 +286,19 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      box-shadow: 0 4px 15px rgba(180, 200, 220, 0.2);
+      box-shadow: 0 4px 15px rgba(94, 86, 70, 0.08);
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .dash-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(160, 185, 210, 0.4);
+      box-shadow: 0 12px 24px rgba(94, 86, 70, 0.15);
     }
 
     .dash-card .value {
       font-size: 2rem;
       font-weight: 700;
-      color: #0083b0;
+      color: #b58926;
       margin-bottom: 6px;
     }
 
@@ -311,13 +315,13 @@
       border: 1px solid var(--border-color);
       border-radius: 14px;
       padding: 35px;
-      box-shadow: 0 4px 15px rgba(180, 200, 220, 0.2);
+      box-shadow: 0 4px 15px rgba(94, 86, 70, 0.08);
     }
 
     .content-box h2 {
       font-size: 2rem;
       margin-bottom: 6px;
-      color: #1a2c40;
+      color: #2b271f;
     }
 
     .content-box .subtitle {
@@ -329,7 +333,7 @@
 
     .content-box p {
       line-height: 1.8;
-      color: #3b4a60;
+      color: #474135;
       margin-bottom: 18px;
     }
 
@@ -343,11 +347,11 @@
 
     .info-list li {
       font-size: 0.95rem;
-      color: #3b4a60;
+      color: #474135;
     }
 
     .info-list strong {
-      color: #1a2c40;
+      color: #2b271f;
     }
 
     .grid-list {
@@ -359,19 +363,19 @@
     }
 
     .grid-item {
-      background-color: #f0f7fc; /* Warna background list item biru muda soft super clean */
+      background-color: #f7f4ed; /* Background item diubah menjadi kuning pudar soft super clean */
       padding: 20px;
       border-radius: 10px;
       border-left: 4px solid var(--accent-color);
-      border-top: 1px solid #e2edf5;
-      border-right: 1px solid #e2edf5;
-      border-bottom: 1px solid #e2edf5;
+      border-top: 1px solid #ede7da;
+      border-right: 1px solid #ede7da;
+      border-bottom: 1px solid #ede7da;
     }
 
     .grid-item strong {
       display: block;
       margin-bottom: 6px;
-      color: #1a2c40;
+      color: #2b271f;
     }
 
     .grid-item span {
@@ -457,7 +461,7 @@
 
       <div class="sidebar-footer">
         <p>© Copyright <strong>iPortfolio</strong></p>
-        <p style="font-size: 0.65rem; margin-top: 2px; color: #414a56;">Designed by BootstrapMade & Ahmad</p>
+        <p style="font-size: 0.65rem; margin-top: 2px; color: #5e5341;">Designed by BootstrapMade & Ahmad</p>
       </div>
 
     </div>
@@ -472,7 +476,7 @@
           <div class="label">Status Kuliah</div>
         </div>
         <div class="dash-card">
-          <div class="value">3</div>
+          <div class="value">2</div>
           <div class="label">Total Proyek</div>
         </div>
         <div class="dash-card">
