@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmad Mulia Aliasnyah — Portfolio & Dashboard</title>
+  <style>
+    /* --- Variabel Warna & Tema Premium Modern (Nuansa Biru Muda) --- */
+    :root {
+      --bg-sidebar-gradient: linear-gradient(135deg, #09111e 0%, #03070d 100%);
+      --bg-main: #eef5f9; /* Mengubah background utama menjadi biru muda lembut */
+      --bg-card: #ffffff;
+      --text-sidebar: #8e9aa8;
+      --text-sidebar-light: #ffffff;
+      --text-main: #2d3748;
+      --text-muted: #5a6a85;
+      --accent-gradient: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+      --accent-color: #00b4db;
+      --border-color: #d2e1ed; /* Border soft menyesuaikan tema biru muda */
+      --glass-bg: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.07);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      display: flex;
+    }
+
+    /* ==========================================================================
+       SIDEBAR KIRI - MODERN LUXURY PREMIUM
+       ========================================================================== */
+    aside {
+      width: 320px;
+      background: var(--bg-sidebar-gradient);
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 40px 24px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 100;
+      overflow-y: auto;
+      border-right: 1px solid var(--glass-border);
+      box-shadow: 4px 0 25px rgba(0, 0, 0, 0.3);
+    }
+
+    /* --- FIX TOTAL ANTI KARAKTER RUSAK: BULAT SEMPURNA NEON --- */
+    aside .profile-img-container {
+      display: block !important;
+      width: 140px !important;
+      height: 140px !important;
+      max-width: 140px !important;
+      max-height: 140px !important;
+      min-width: 140px !important;
+      min-height: 140px !important;
+      margin: 0 auto 20px auto !important;
+      padding: 0 !important;
+      border-radius: 50% !important;
+      border: 3px solid #00b4db !important;
+      box-shadow: 0 0 20px rgba(0, 180, 219, 0.7) !important;
+      overflow: hidden !important;
+    }
+
+    aside .profile-img-container img {
+      display: block !important;
+      width: 100% !important;
+      height: 100% !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      object-fit: cover !important;
+      object-position: center top !important;
+      border-radius: 50% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    /* Info Nama Utama */
+    aside h1 {
+      color: var(--text-sidebar-light);
+      font-size: 1.35rem;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    /* Subtitle Tag Informatika */
+    .sidebar-tag {
+      font-size: 0.75rem;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin-bottom: 35px;
+      background: rgba(0, 180, 219, 0.1);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Menu Navigasi Tengah */
+    .nav-menu {
+      width: 100%;
+      list-style: none;
+    }
+
+    .nav-menu li {
+      margin-bottom: 10px;
+    }
+
+    .nav-menu a {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 20px;
+      color: var(--text-sidebar);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-radius: 12px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid transparent;
+    }
+
+    /* Hover Menu */
+    .nav-menu a:hover {
+      color: var(--text-sidebar-light);
+      background-color: rgba(255, 255, 255, 0.03);
+      border-color: rgba(255, 255, 255, 0.05);
+      padding-left: 25px;
+    }
+
+    /* Tombol Aktif Gradasi Menyala */
+    .nav-menu a.active {
+      color: #fff !important;
+      background: var(--accent-gradient) !important;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0, 131, 176, 0.4);
+      border-color: transparent;
+    }
+
+    /* CONTAINER FOOTER DI PALING BAWAH */
+    .sidebar-footer-container {
+      margin-top: auto;
+      width: 100%;
+      padding-top: 25px;
+    }
+
+    /* Sosmed Text Berbentuk List Card Transparan Premium */
+    .text-social-links {
+      list-style: none;
+      width: 100%;
+      margin-bottom: 25px;
+    }
+
+    .text-social-links li {
+      margin-bottom: 8px;
+    }
+
+    .text-social-links a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      color: var(--text-sidebar);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .text-social-links a:hover {
+      color: var(--text-sidebar-light);
+      border-color: var(--accent-color);
+      background: rgba(0, 180, 219, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .text-social-links span {
+      font-weight: 500;
+    }
+
+    /* Hak Cipta */
+    .sidebar-footer {
+      color: #4a5464;
+      font-size: 0.7rem;
+      text-align: center;
+      line-height: 1.6;
+      border-top: 1px solid var(--glass-border);
+      padding-top: 15px;
+    }
+
+    .sidebar-footer strong {
+      color: #718296;
+    }
+
+    /* ==========================================================================
+       KONTEN UTAMA (Kanan)
+       ========================================================================== */
+    main {
+      margin-left: 320px;
+      width: calc(100% - 320px);
+      padding: 50px 40px;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .hero-banner-9-16 {
+      width: 100%;
+      height: 480px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(160, 185, 210, 0.3);
+      position: relative;
+    }
+
+    .hero-banner-9-16 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+    }
+
+    .dashboard-section {
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #1a2c40;
+      margin-bottom: 24px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 4px;
+      background: var(--accent-gradient);
+      border-radius: 2px;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .dash-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(180, 200, 220, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .dash-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(160, 185, 210, 0.4);
+    }
+
+    .dash-card .value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0083b0;
+      margin-bottom: 6px;
+    }
+
+    .dash-card .label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    .content-box {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 35px;
+      box-shadow: 0 4px 15px rgba(180, 200, 220, 0.2);
+    }
+
+    .content-box h2 {
+      font-size: 2rem;
+      margin-bottom: 6px;
+      color: #1a2c40;
+    }
+
+    .content-box .subtitle {
+      font-size: 1.1rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .content-box p {
+      line-height: 1.8;
+      color: #3b4a60;
+      margin-bottom: 18px;
+    }
+
+    .info-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 25px;
+      list-style: none;
+    }
+
+    .info-list li {
+      font-size: 0.95rem;
+      color: #3b4a60;
+    }
+
+    .info-list strong {
+      color: #1a2c40;
+    }
+
+    .grid-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      list-style-type: none;
+      margin-top: 15px;
+    }
+
+    .grid-item {
+      background-color: #f0f7fc; /* Warna background list item biru muda soft super clean */
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid var(--accent-color);
+      border-top: 1px solid #e2edf5;
+      border-right: 1px solid #e2edf5;
+      border-bottom: 1px solid #e2edf5;
+    }
+
+    .grid-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #1a2c40;
+    }
+
+    .grid-item span {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Responsive Handphone */
+    @media (max-width: 992px) {
+      body {
+        flex-direction: column;
+      }
+      aside {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 30px 20px;
+      }
+      main {
+        width: 100%;
+        margin-left: 0;
+        padding: 30px 20px;
+      }
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+      .hero-banner-9-16 {
+        height: 400px;
+        width: 280px;
+        margin: 0 auto;
+      }
+      .info-list {
+        grid-template-columns: 1fr;
+      }
+      .sidebar-footer-container {
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <aside>
+    <div class="profile-img-container">
+      <img src="2511501203.jpeg" alt="Foto Ahmad Mulia Aliasnyah">
+    </div>
+    
+    <h1>Ahmad Mulia</h1>
+    <div class="sidebar-tag">Informatika '25</div>
+
+    <ul class="nav-menu">
+      <li><a href="#dashboard" class="active">🏠 <span>Home & Dashboard</span></a></li>
+      <li><a href="#about">👤 <span>Tentang Saya</span></a></li>
+      <li><a href="#skills">🛠️ <span>Keahlian & Skill</span></a></li>
+      <li><a href="#projects">📁 <span>Proyek</span></a></li>
+    </ul>
+
+    <div class="sidebar-footer-container">
+      
+      <ul class="text-social-links">
+        <li>
+          <a href="mailto:mulialiansyah@gmail.com">
+            <span>✉️ Email: mulialiansyah@gmail.com</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/aliansyaahhz/#" target="_blank">
+            <span>📸 Instagram: @aliansyaahhz</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/mulialiansyah" target="_blank">
+            <span>💻 GitHub: mulialiansyah</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/ahmad-mulia-aliansyah-001b443a6/?isSelfProfile=false" target="_blank">
+            <span>🌐 LinkedIn: Ahmad Mulia Aliansyah</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <p>© Copyright <strong>iPortfolio</strong></p>
+        <p style="font-size: 0.65rem; margin-top: 2px; color: #414a56;">Designed by BootstrapMade & Ahmad</p>
+      </div>
+
+    </div>
+  </aside>
+
+  <main>
+    <section class="dashboard-section" id="dashboard">
+      <h3 class="section-title">Dashboard Overview</h3>
+      <div class="dashboard-grid">
+        <div class="dash-card">
+          <div class="value">Aktif</div>
+          <div class="label">Status Kuliah</div>
+        </div>
+        <div class="dash-card">
+          <div class="value">3</div>
+          <div class="label">Total Proyek</div>
+        </div>
+        <div class="dash-card">
+          <div class="value">Aktif</div>
+          <div class="label">Asisten Lab</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" style="margin-bottom: 40px;">
+      <h3 class="section-title">Tentang Saya</h3>
+      <div class="about-layout">
+        <div class="hero-banner-9-16">
+          <img src="foto1.jpeg" alt="Ahmad Mulia Aliasnyah">
+        </div>
+        <div class="content-box">
+          <h2>Ahmad Mulia Aliasnyah</h2>
+          <div class="subtitle">Teknik Informatika</div>
+          <p>Kenalin Gue Alek, anak Teknik Informatika Budi Luhur '25. Sebagai calon anak Lab, passion gue emang gak jauh-jauh dari yang namanya bongkar pasang hardware, ngoprek berbagai OS, sampai troubleshooting nyari root cause pas sistem lagi error-error-nya. Gak cuma doyan mantengin layar sendirian, gue juga siap banget jadi partner diskusi, nge-guide, sekaligus ngoding bareng.</p>
+          <ul class="info-list">
+            <li><strong>Angkatan:</strong> 2025</li>
+            <li><strong>Jurusan:</strong> Teknik Informatika</li>
+            <li><strong>Kampus:</strong> Universitas Budi Luhur</li>
+            <li><strong>Fakultas:</strong> Teknologi Informasi</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" style="margin-bottom: 40px;">
+      <h3 class="section-title">Keahlian & Skill</h3>
+      <div class="content-box">
+        <p>Dasar teknologi yang dikuasai selama perkuliahan:</p>
+        <ul class="grid-list">
+          <li class="grid-item">
+            <strong>Bahasa Pemrograman</strong>
+            <span>Python, JavaScript, C++, PHP</span>
+          </li>
+          <li class="grid-item">
+            <strong>Web Development</strong>
+            <span>HTML, CSS </span>
+          </li>
+          <li class="grid-item">
+            <strong>Perangkat Keras & OS</strong>
+            <span>Perakitan PC, Instalasi OS Windows/Linux, Jaringan Dasar</span>
+          </li>
+          <li class="grid-item">
+            <strong>Manajemen Data</strong>
+            <span>Perancangan ERD Database</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" style="margin-bottom: 40px;">
+      <h3 class="section-title">Proyek</h3>
+      <div class="content-box">
+        <ul class="grid-list">
+          <li class="grid-item">
+            <strong>Sistem inventory Lab Komputer</strong>
+            <span>Membuat website dan database inventory Lab</span>
+          </li>
+          <li class="grid-item">
+            <strong>Sistem Jaringan</strong>
+            <span>Membuat tetep terhubung ke jaringan walaupun sinyal hilang</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const links = document.querySelectorAll('.nav-menu a');
+    links.forEach(link => {
+      link.addEventListener('click', function() {
+        links.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
